@@ -4,13 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Two-Factor Authentication | Privacy Chick</title>
-  <meta name="description" content="Add a second layer of security to every account. A step-by-step guide to setting up two-factor authentication using Proton Authenticator.">
+  <meta name="description" content="Set up two-factor authentication with free Proton Authenticator, or use Bitwarden Password Manager's paid integrated codes for convenience. Learn the tradeoffs and save recovery codes safely.">
   <link rel="stylesheet" href="css/style.css?v=17">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" href="/favicon.ico">
+  <style>
+    /* Recommendation layout for this page only. */
+    #recommendation {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin: 2.5rem 0;
+    }
+    #recommendation .rec-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 0;
+      margin: 0;
+      padding: 1.75rem 1.25rem;
+    }
+    #recommendation .rec-secondary {
+      background: var(--card-bg);
+      border-color: var(--border);
+    }
+    #recommendation .rec-box h2 { font-size: 1.5rem; }
+    #recommendation .rec-plan {
+      display: inline-block;
+      background: var(--cream);
+      color: var(--charcoal);
+      border-radius: var(--radius);
+      padding: 0.25rem 0.65rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    #recommendation .btn { margin-top: auto; width: 100%; }
+    @media (max-width: 680px) {
+      #recommendation { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -70,7 +106,7 @@
     <div class="page-hero-content">
       <span class="eyebrow"><span class="badge-critical" style="position:static; display:inline-block; margin-bottom:0.5rem;">Critical</span></span>
       <h1>Two-Factor Authentication</h1>
-      <p>Add a second lock to every account. Even if your password is stolen, your account stays safe.</p>
+      <p>Add a second lock to your accounts. Two-factor authentication helps protect you if your password is stolen.</p>
     </div>
   </div>
 </section>
@@ -84,12 +120,23 @@
       <main class="content-main">
 
         <!-- RECOMMENDATION -->
-        <div class="rec-box" id="recommendation">
-          <span class="eyebrow">My recommendation</span>
-          <img src="images/logos/proton-authenticator.webp" alt="Proton Authenticator logo" class="rec-logo">
-          <h2>Proton Authenticator</h2>
-          <p>Free, open-source, end-to-end encrypted, and works offline. Available on iPhone, Android, Windows, Mac, and Linux.</p>
-          <a href="https://proton.me/authenticator" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Proton Authenticator</a>
+        <div id="recommendation" aria-label="Authenticator recommendations">
+          <section class="rec-box">
+            <span class="eyebrow">Primary recommendation</span>
+            <img src="images/logos/proton-authenticator.webp" alt="Proton Authenticator logo" class="rec-logo">
+            <h2>Proton Authenticator</h2>
+            <span class="rec-plan">Free, separate authenticator</span>
+            <p>My first choice: keep your codes separate from your passwords. Open-source, works offline, and offers optional encrypted sync. Available on iPhone, Android, Windows, Mac, and Linux.</p>
+            <a href="https://proton.me/authenticator" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Proton Authenticator</a>
+          </section>
+          <section class="rec-box rec-secondary">
+            <span class="eyebrow">Secondary: convenience option</span>
+            <img src="images/logos/bitwarden.webp" alt="Bitwarden logo" class="rec-logo">
+            <h2>Bitwarden Password Manager</h2>
+            <span class="rec-plan">Paid: Premium or Families</span>
+            <p>Already use Bitwarden? Keep the keys for your two-step codes beside your passwords, generate codes, and fill them where supported. Convenient, but it puts both in one vault.</p>
+            <a href="https://bitwarden.com/help/integrated-authenticator/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Use Bitwarden&rsquo;s built-in codes</a>
+          </section>
         </div>
 
         <!-- TABS -->
@@ -113,8 +160,9 @@
               <li class="step">
                 <div class="step-num">1</div>
                 <div class="step-content">
-                  <h4>Download Proton Authenticator</h4>
-                  <p>Install the free app on your phone from the <a href="https://apps.apple.com/app/apple-store/id6741758667" target="_blank" rel="noopener noreferrer">App Store (iPhone)</a> or <a href="https://play.google.com/store/apps/details?id=proton.android.authenticator" target="_blank" rel="noopener noreferrer">Google Play (Android)</a>. You do not need a Proton account to use it.</p>
+                  <h4>Choose where to keep your codes</h4>
+                  <p><strong>My first choice: Proton Authenticator.</strong> Install the free app from the <a href="https://apps.apple.com/app/apple-store/id6741758667" target="_blank" rel="noopener noreferrer">App Store (iPhone)</a> or <a href="https://play.google.com/store/apps/details?id=proton.android.authenticator" target="_blank" rel="noopener noreferrer">Google Play (Android)</a>. No Proton account is needed.</p>
+                  <p><strong>Already use Bitwarden?</strong> Its Password Manager can generate codes inside your vault with <strong>Premium or Families</strong>. Check the <a href="https://bitwarden.com/pricing/" target="_blank" rel="noopener noreferrer">paid plans</a>. This is different from the free, separate <a href="https://bitwarden.com/products/authenticator/" target="_blank" rel="noopener noreferrer">Bitwarden Authenticator app</a>.</p>
                 </div>
               </li>
               <li class="step">
@@ -128,24 +176,34 @@
                 <div class="step-num">3</div>
                 <div class="step-content">
                   <h4>Choose &ldquo;Authenticator App&rdquo;</h4>
-                  <p>When asked how you want to receive your second factor, select <strong>Authenticator App</strong> (not SMS/text message; I&rsquo;ll explain why below). The site will show you a QR code.</p>
+                  <p>Choose <strong>Authenticator App</strong> rather than SMS/text message when offered. The site will show you a QR code, usually with an option to see a manual setup key.</p>
                 </div>
               </li>
               <li class="step">
                 <div class="step-num">4</div>
                 <div class="step-content">
-                  <h4>Scan the QR code</h4>
-                  <p>Open Proton Authenticator, tap the <strong>+</strong> button, and choose <strong>Scan QR code</strong>. Point your phone at the code on your screen. The account is now linked.</p>
+                  <h4>Add the account to your chosen app</h4>
+                  <p><strong>Proton:</strong> tap <strong>+</strong> and scan the QR code, or enter the site&rsquo;s manual setup key.</p>
+                  <p><strong>Bitwarden Password Manager:</strong> edit that site&rsquo;s saved login. Choose <strong>Set up TOTP</strong> on mobile, or the <strong>TOTP</strong> scanner in the browser extension, to scan the QR code. Or paste the manual setup key into the <strong>Authenticator key</strong> field. Save the login.</p>
                 </div>
               </li>
               <li class="step">
                 <div class="step-num">5</div>
                 <div class="step-content">
-                  <h4>Save your backup codes</h4>
-                  <p>Most sites will show you a list of one-time backup codes. <strong>Save these somewhere safe</strong>: a printed sheet in a secure location, or in your password manager. You&rsquo;ll need them if you ever lose your phone.</p>
+                  <h4>Confirm setup and save your backup codes</h4>
+                  <p>Back on the site, enter the <strong>current 6-digit code</strong> from your chosen app and finish the setup. Wait for the site to confirm that 2FA is on. If a code expires, use the next one.</p>
+                  <p>Save any backup codes the site provides. A printed copy in a secure place is a good option. Your password manager can hold other accounts&rsquo; backup codes, but <strong>keep Bitwarden&rsquo;s own recovery code outside its vault</strong> so you can reach it if you are locked out.</p>
                 </div>
               </li>
             </ol>
+
+            <div class="callout callout-warn">
+              <span class="callout-icon">&#9888;</span>
+              <div class="callout-body">
+                <strong>Using Bitwarden for codes? Protect it separately</strong>
+                <p>Use a strong, unique master password and turn on <a href="https://bitwarden.com/help/setup-two-step-login/" target="_blank" rel="noopener noreferrer">Bitwarden&rsquo;s own two-step login</a> with a separate app such as Proton Authenticator, or a FIDO2 security key. Do not keep its only login code source inside the vault. Print its <a href="https://bitwarden.com/help/two-step-recovery-code/" target="_blank" rel="noopener noreferrer">recovery code</a> and keep it somewhere secure outside Bitwarden. That code does not replace a forgotten master password.</p>
+              </div>
+            </div>
 
             <div class="callout callout-tip">
               <span class="callout-icon">&#128161;</span>
@@ -170,7 +228,7 @@
 
             <div class="content-section">
               <h2>What is two-factor authentication?</h2>
-              <p>Two-factor authentication (2FA), sometimes called two-step verification or multi-factor authentication, adds a second layer of protection to your accounts beyond just a password. The idea is simple: even if someone steals your password, they still can&rsquo;t get into your account without also having access to your second factor.</p>
+              <p>Two-factor authentication (2FA), sometimes called two-step verification or multi-factor authentication, adds protection beyond a password. A stolen password alone is usually not enough to sign in because the site also asks for a second check, such as an authenticator code.</p>
               <p>Think of it like a bank safe that requires both a key and a combination. Stealing one isn&rsquo;t enough.</p>
               <p>The &ldquo;factors&rdquo; in authentication are typically described as:</p>
               <ul style="margin-bottom:1rem;">
@@ -183,13 +241,13 @@
 
             <div class="content-section">
               <h2>Why passwords alone aren&rsquo;t enough</h2>
-              <p>Passwords are stolen constantly, through data breaches at companies you trust, through phishing emails, and through automated attacks that try millions of combinations per second. According to the 2024 Verizon Data Breach Investigations Report, stolen credentials are involved in over 80% of hacking-related breaches.</p>
-              <p>Even a strong, unique password can be compromised if the company storing it is breached. 2FA means that even a stolen password is useless to an attacker without your phone.</p>
+              <p>Passwords can be exposed in data breaches, stolen through fake login pages, or guessed. A strong, unique password matters, but a second login check adds protection if that password is stolen.</p>
+              <p>2FA is not a guarantee. A fake login page can steal your password and current authenticator code together, and a compromised device can expose both.</p>
             </div>
 
             <div class="content-section">
-              <h2>Types of 2FA: from weakest to strongest</h2>
-              <p>Not all 2FA is created equal. Here&rsquo;s how the common options compare:</p>
+              <h2>Login security options</h2>
+              <p>Not all login methods offer the same protection. Authenticator codes are a practical improvement over texts, but <strong>TOTP codes are not phishing-resistant</strong>: a fake site can trick you into sharing a code and use it straight away. FIDO2 security keys and passkeys resist that kind of trick.</p>
 
               <div style="overflow-x:auto;margin:1.5rem 0;">
                 <table style="width:100%;border-collapse:collapse;font-size:0.93rem;">
@@ -209,22 +267,22 @@
                     <tr style="border-bottom:1px solid var(--border);background:var(--warm-white);">
                       <td style="padding:0.75rem 1rem;font-weight:600;">Email code</td>
                       <td style="padding:0.75rem 1rem;">A code is sent to your email address</td>
-                      <td style="padding:0.75rem 1rem;color:#9A6A10;">Moderate (only as secure as your email)</td>
+                      <td style="padding:0.75rem 1rem;color:#9A6A10;">Depends on your email security; can be phished</td>
                     </tr>
                     <tr style="border-bottom:1px solid var(--border);">
                       <td style="padding:0.75rem 1rem;font-weight:600;">Authenticator app (TOTP)</td>
-                      <td style="padding:0.75rem 1rem;">App generates a new 6-digit code every 30 seconds</td>
-                      <td style="padding:0.75rem 1rem;color:var(--teal);font-weight:600;">Strong (my recommendation)</td>
+                      <td style="padding:0.75rem 1rem;">App usually generates a new 6-digit code every 30 seconds</td>
+                      <td style="padding:0.75rem 1rem;color:var(--teal);font-weight:600;">Good everyday option; can be phished</td>
                     </tr>
                     <tr style="background:var(--warm-white);">
-                      <td style="padding:0.75rem 1rem;font-weight:600;">Hardware security key</td>
+                      <td style="padding:0.75rem 1rem;font-weight:600;">FIDO2 hardware security key</td>
                       <td style="padding:0.75rem 1rem;">A physical USB or NFC key you plug in or tap</td>
-                      <td style="padding:0.75rem 1rem;color:var(--teal);font-weight:600;">Strongest (best for high-value accounts)</td>
+                      <td style="padding:0.75rem 1rem;color:var(--teal);font-weight:600;">Phishing-resistant; best for high-value accounts</td>
                     </tr>
                     <tr style="border-top:1px solid var(--border);">
                       <td style="padding:0.75rem 1rem;font-weight:600;">Passkeys</td>
-                      <td style="padding:0.75rem 1rem;">Replaces both your password <em>and</em> 2FA with a single biometric step (Face ID, fingerprint, or device PIN)</td>
-                      <td style="padding:0.75rem 1rem;color:var(--teal);font-weight:600;">Strongest (the future of login)</td>
+                      <td style="padding:0.75rem 1rem;">Often replaces a password and code; confirm with your device or password manager</td>
+                      <td style="padding:0.75rem 1rem;color:var(--teal);font-weight:600;">Phishing-resistant where supported</td>
                     </tr>
                   </tbody>
                 </table>
@@ -233,27 +291,62 @@
 
             <div class="content-section">
               <h2>A note on passkeys</h2>
-              <p>Passkeys are a newer technology that goes a step beyond traditional 2FA. Instead of entering a password and then a code, a passkey uses your device&rsquo;s built-in biometrics (Face ID, fingerprint, or PIN) to verify your identity in a single step. The key never leaves your device, which means there&rsquo;s nothing for hackers to steal from a company&rsquo;s servers.</p>
-              <p>Major sites including Google, Apple, Amazon, and GitHub now support passkeys. When a site offers you the option to &ldquo;create a passkey,&rdquo; take it. It&rsquo;s more secure than a password plus 2FA combined. Your password manager (Bitwarden, 1Password) can store passkeys alongside your passwords.</p>
-              <p>Passkeys are still rolling out across the web, so you&rsquo;ll still need an authenticator app for many sites. But whenever a passkey option is available, it&rsquo;s the best choice.</p>
+              <p>Passkeys often let you sign in without a password and code. You confirm the login with your fingerprint, face, device PIN, or password manager. A passkey is tied to the real site, so a lookalike site cannot use it.</p>
+              <p>The site stores only the public part of a passkey, not the secret needed to sign in. Some passkeys stay on one device or security key; others sync through an encrypted password manager. Your password manager (e.g., Bitwarden) can store passkeys alongside your passwords.</p>
+              <p>Choose a passkey when available, and check the site&rsquo;s recovery options before relying on it. You&rsquo;ll still need authenticator codes for many sites.</p>
             </div>
 
             <div class="content-section">
               <h2>Why I recommend Proton Authenticator</h2>
               <p>I recommend <strong>Proton Authenticator</strong> because it combines strong privacy with ease of use:</p>
               <ul style="margin-bottom:1rem;">
-                <li><strong>End-to-end encrypted</strong>: your 2FA codes are encrypted before they leave your device</li>
+                <li><strong>Separate from your password vault</strong>: opening your password manager does not also reveal codes kept only in Proton Authenticator</li>
+                <li><strong>Encrypted sync</strong>: optional cross-device sync protects your authenticator data with end-to-end encryption</li>
                 <li><strong>No account required</strong>: works fully offline; a Proton account is only needed if you want to sync across multiple devices</li>
                 <li><strong>Open-source</strong>: the code is publicly auditable, so security researchers can verify it does what it claims</li>
                 <li><strong>Cross-platform</strong>: available on iPhone, Android, Windows, Mac, and Linux</li>
                 <li><strong>Free</strong>: no cost, no ads, no data selling</li>
               </ul>
-              <p>Proton is a Swiss company founded by scientists from CERN. Their products are built around the principle that they should never be able to access your data even if compelled by law, because they design their systems so that they technically cannot.</p>
+              <p>If you use optional sync, Proton Authenticator encrypts your authenticator data before it leaves your device. Proton cannot read that synced data. This protection does not prevent someone with access to your unlocked device from seeing your codes.</p>
+            </div>
+
+            <div class="content-section" id="bitwarden-codes">
+              <h2>Already use Bitwarden? A convenient second choice</h2>
+              <p>Bitwarden Password Manager can keep a site&rsquo;s password and <strong>authenticator key</strong> in the same saved login. That key, also called a secret or seed, creates the changing two-step codes. You do not need to switch between two apps to find them.</p>
+              <p><strong>Generating codes inside Password Manager is paid:</strong> you need Premium or membership in a paid Families, Teams, or Enterprise plan. Families includes premium features for up to six people. Free Password Manager accounts can save the key but cannot generate the codes there. See <a href="https://bitwarden.com/pricing/" target="_blank" rel="noopener noreferrer">current Bitwarden plans</a>.</p>
+              <p>The <a href="https://bitwarden.com/products/authenticator/" target="_blank" rel="noopener noreferrer">standalone Bitwarden Authenticator</a> is a different, free iPhone and Android app. You can use it without a Password Manager account. It does not make the built-in Password Manager feature free.</p>
+              <h3 style="margin-bottom:0.75rem;">Where code filling works</h3>
+              <p>Bitwarden&rsquo;s browser extension on a computer and its iPhone/iPad app on <strong>iOS 18 or later</strong> can fill codes in supported login forms. If browser &ldquo;autofill on page load&rdquo; is enabled, the code is copied for pasting instead. Filling depends on the site and your settings.</p>
+              <p>On Android, the desktop app, or a form that does not support code filling, open the saved login, copy the current code, and paste or type it. All Bitwarden apps can display and copy codes. The <a href="https://bitwarden.com/help/integrated-authenticator/" target="_blank" rel="noopener noreferrer">official setup guide</a> explains the options.</p>
+              <h3 style="margin-bottom:0.75rem;">Why you might keep codes separate</h3>
+              <p><strong>If an attacker can read your vault, they can get both your passwords and the secret keys that generate future codes.</strong> Keeping codes in Proton Authenticator avoids putting both in one vault. It does not make a compromised phone or computer safe.</p>
+              <p>For your most important accounts, I prefer a separate authenticator, or a FIDO2 security key or passkey where available. Built-in Bitwarden codes can still be a sensible convenience choice if that helps you use two-step login consistently. Neither Bitwarden nor Proton&rsquo;s changing codes are phishing-resistant.</p>
+              <p><strong>Protect Bitwarden itself separately.</strong> Use a strong, unique master password and a separate authenticator or FIDO2 security key for its two-step login. Keep an independently saved recovery code, such as a printed copy in a safe place. Do not store the only copy inside the locked vault you would need it to recover.</p>
             </div>
 
             <div class="further-reading" id="reading">
               <h3>Further Reading</h3>
               <ul>
+                <li>
+                  <a href="https://bitwarden.com/help/integrated-authenticator/" target="_blank" rel="noopener noreferrer">Set up and use Bitwarden&rsquo;s built-in codes</a>
+                  <span class="source">Bitwarden Help (paid Password Manager feature)</span>
+                </li>
+                <li>
+                  <a href="https://bitwarden.com/pricing/" target="_blank" rel="noopener noreferrer">Premium and Families plans</a>
+                  <span class="source">Bitwarden (current pricing)</span>
+                </li>
+                <li>
+                  <a href="https://bitwarden.com/help/bitwarden-authenticator/" target="_blank" rel="noopener noreferrer">The separate Bitwarden Authenticator app</a>
+                  <span class="source">Bitwarden Help (free standalone app)</span>
+                </li>
+                <li>
+                  <a href="https://bitwarden.com/help/two-step-recovery-code/" target="_blank" rel="noopener noreferrer">Save Bitwarden&rsquo;s two-step recovery code</a>
+                  <span class="source">Bitwarden Help (keep a copy outside your vault)</span>
+                </li>
+                <li>
+                  <a href="https://www.cisa.gov/audiences/small-and-medium-businesses/secure-your-business/require-multifactor-authentication" target="_blank" rel="noopener noreferrer">Choosing stronger login protection</a>
+                  <span class="source">CISA (codes versus phishing-resistant security keys)</span>
+                </li>
                 <li>
                   <a href="https://proton.me/blog/what-is-two-factor-authentication-2fa" target="_blank" rel="noopener noreferrer">What is two-factor authentication?</a>
                   <span class="source">Proton Blog</span>
@@ -281,11 +374,22 @@
       <!-- SIDEBAR -->
       <aside class="content-sidebar">
         <div class="sidebar-card">
-          <h4>Download Proton Authenticator</h4>
+          <h4>Primary: Proton Authenticator</h4>
+          <p style="font-size:0.88rem;">Free, separate app</p>
           <ul style="margin-top:0.5rem;">
             <li><a href="https://apps.apple.com/app/apple-store/id6741758667" target="_blank" rel="noopener noreferrer">iPhone / iPad</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=proton.android.authenticator" target="_blank" rel="noopener noreferrer">Android</a></li>
-            <li><a href="https://proton.me/authenticator" target="_blank" rel="noopener noreferrer">Windows &amp; Mac</a></li>
+            <li><a href="https://proton.me/authenticator" target="_blank" rel="noopener noreferrer">Windows, Mac &amp; Linux</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h4>Secondary: Bitwarden codes</h4>
+          <p style="font-size:0.88rem;">Already use Password Manager? Built-in code generation requires <strong>Premium or Families</strong>.</p>
+          <ul>
+            <li><a href="https://bitwarden.com/help/integrated-authenticator/" target="_blank" rel="noopener noreferrer">Setup and code filling</a></li>
+            <li><a href="https://bitwarden.com/pricing/" target="_blank" rel="noopener noreferrer">Check paid plans</a></li>
+            <li><a href="https://bitwarden.com/help/setup-two-step-login/" target="_blank" rel="noopener noreferrer">Protect Bitwarden separately</a></li>
+            <li><a href="https://bitwarden.com/help/two-step-recovery-code/" target="_blank" rel="noopener noreferrer">Save your recovery code</a></li>
           </ul>
         </div>
         <div class="sidebar-card sidebar-next-guide">
