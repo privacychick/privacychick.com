@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Two-Factor Authentication | Privacy Chick</title>
-  <meta name="description" content="Set up two-factor authentication with free Proton Authenticator, or use Bitwarden Password Manager's paid integrated codes for convenience. Learn the tradeoffs and save recovery codes safely.">
+  <meta name="description" content="Set up two-factor authentication with free Proton Authenticator, or use Bitwarden's paid integrated codes for convenience. Learn the tradeoffs and save recovery codes safely.">
   <link rel="stylesheet" href="css/style.css?v=17">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,7 +28,6 @@
       padding: 1.75rem 1.25rem;
     }
     #recommendation .rec-secondary {
-      background: var(--card-bg);
       border-color: var(--border);
     }
     #recommendation .rec-box h2 { font-size: 1.5rem; }
@@ -132,7 +131,7 @@
           <section class="rec-box rec-secondary">
             <span class="eyebrow">Secondary: convenience option</span>
             <img src="images/logos/bitwarden.webp" alt="Bitwarden logo" class="rec-logo">
-            <h2>Bitwarden Password Manager</h2>
+            <h2>Bitwarden</h2>
             <span class="rec-plan">Paid: Premium or Families</span>
             <p>Already use Bitwarden? Keep the keys for your two-step codes beside your passwords, generate codes, and fill them where supported. Convenient, but it puts both in one vault.</p>
             <a href="https://bitwarden.com/help/integrated-authenticator/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Use Bitwarden&rsquo;s built-in codes</a>
@@ -184,7 +183,7 @@
                 <div class="step-content">
                   <h4>Add the account to your chosen app</h4>
                   <p><strong>Proton:</strong> tap <strong>+</strong> and scan the QR code, or enter the site&rsquo;s manual setup key.</p>
-                  <p><strong>Bitwarden Password Manager:</strong> edit that site&rsquo;s saved login. Choose <strong>Set up TOTP</strong> on mobile, or the <strong>TOTP</strong> scanner in the browser extension, to scan the QR code. Or paste the manual setup key into the <strong>Authenticator key</strong> field. Save the login.</p>
+                  <p><strong>Bitwarden:</strong> edit that site&rsquo;s saved login. Choose <strong>Set up TOTP</strong> on mobile, or the <strong>TOTP</strong> scanner in the browser extension, to scan the QR code. Or paste the manual setup key into the <strong>Authenticator key</strong> field. Save the login.</p>
                 </div>
               </li>
               <li class="step">
@@ -312,7 +311,7 @@
 
             <div class="content-section" id="bitwarden-codes">
               <h2>Already use Bitwarden? A convenient second choice</h2>
-              <p>Bitwarden Password Manager can keep a site&rsquo;s password and <strong>authenticator key</strong> in the same saved login. That key, also called a secret or seed, creates the changing two-step codes. You do not need to switch between two apps to find them.</p>
+              <p>Bitwarden can keep a site&rsquo;s password and <strong>authenticator key</strong> in the same saved login. That key, also called a secret or seed, creates the changing two-step codes. You do not need to switch between two apps to find them.</p>
               <p><strong>Generating codes inside Password Manager is paid:</strong> you need Premium or membership in a paid Families, Teams, or Enterprise plan. Families includes premium features for up to six people. Free Password Manager accounts can save the key but cannot generate the codes there. See <a href="https://bitwarden.com/pricing/" target="_blank" rel="noopener noreferrer">current Bitwarden plans</a>.</p>
               <p>The <a href="https://bitwarden.com/products/authenticator/" target="_blank" rel="noopener noreferrer">standalone Bitwarden Authenticator</a> is a different, free iPhone and Android app. You can use it without a Password Manager account. It does not make the built-in Password Manager feature free.</p>
               <h3 style="margin-bottom:0.75rem;">Where code filling works</h3>
@@ -375,7 +374,6 @@
       <aside class="content-sidebar">
         <div class="sidebar-card">
           <h4>Primary: Proton Authenticator</h4>
-          <p style="font-size:0.88rem;">Free, separate app</p>
           <ul style="margin-top:0.5rem;">
             <li><a href="https://apps.apple.com/app/apple-store/id6741758667" target="_blank" rel="noopener noreferrer">iPhone / iPad</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=proton.android.authenticator" target="_blank" rel="noopener noreferrer">Android</a></li>
@@ -384,12 +382,10 @@
         </div>
         <div class="sidebar-card">
           <h4>Secondary: Bitwarden codes</h4>
-          <p style="font-size:0.88rem;">Already use Password Manager? Built-in code generation requires <strong>Premium or Families</strong>.</p>
-          <ul>
-            <li><a href="https://bitwarden.com/help/integrated-authenticator/" target="_blank" rel="noopener noreferrer">Setup and code filling</a></li>
-            <li><a href="https://bitwarden.com/pricing/" target="_blank" rel="noopener noreferrer">Check paid plans</a></li>
-            <li><a href="https://bitwarden.com/help/setup-two-step-login/" target="_blank" rel="noopener noreferrer">Protect Bitwarden separately</a></li>
-            <li><a href="https://bitwarden.com/help/two-step-recovery-code/" target="_blank" rel="noopener noreferrer">Save your recovery code</a></li>
+          <ul style="margin-top:0.5rem;">
+            <li><a href="https://apps.apple.com/app/bitwarden-password-manager/id1137397744" target="_blank" rel="noopener noreferrer">iPhone / iPad</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.x8bit.bitwarden" target="_blank" rel="noopener noreferrer">Android</a></li>
+            <li><a href="https://bitwarden.com/download/" target="_blank" rel="noopener noreferrer">Browser Extension</a></li>
           </ul>
         </div>
         <div class="sidebar-card sidebar-next-guide">

@@ -4,11 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Social Media | Privacy Chick</title>
-  <meta name="description" content="Facebook, X, and TikTok are designed to harvest your data. You don't have to quit everything, but you can downsize. Here's how.">
+  <meta name="description" content="Protect your Facebook login, limit who sees your posts, and make practical privacy choices on Instagram, TikTok, and X. Start with four clear steps.">
   <link rel="stylesheet" href="css/style.css?v=17">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="favicon-192.png">
+  <style>
+    .social-guide .content-section h3 { margin-bottom: 0.85rem; }
+    .social-guide .step-content { min-width: 0; flex: 1; }
+    .social-guide .step-content h4 { font-size: 1.08rem; margin-bottom: 0.6rem; }
+    .social-guide .step-content p { font-size: 1rem; margin-bottom: 0.8rem; }
+    .social-guide .step-content p:last-child { margin-bottom: 0; }
+    .social-guide .steps-list { gap: 1.75rem; }
+    .social-guide .check-result { background: var(--teal-pale); border-left: 4px solid var(--teal); border-radius: 0 6px 6px 0; padding: 0.85rem 1rem; }
+    .social-guide .check-result > strong:first-child { display: block; color: var(--teal-dark); font-weight: 700; margin-bottom: 0.25rem; }
+    .social-guide .checked-note { font-size: 0.95rem; color: var(--charcoal-mid); }
+    .social-guide .device-help { margin: 0.75rem 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card-bg); }
+    .social-guide .device-help summary { padding: 0.85rem 1rem; cursor: pointer; font-weight: 600; color: var(--charcoal); }
+    .social-guide .device-help summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: var(--radius); }
+    .social-guide .device-help[open] summary { border-bottom: 1px solid var(--border); }
+    .social-guide .device-help-content { padding: 1rem; }
+    .social-guide .device-help-content p:last-child { margin-bottom: 0; }
+    .social-guide .device-chooser { margin-bottom: 2rem; }
+    .social-guide .do-next-heading { margin-top: 2rem; }
+    .social-guide a { overflow-wrap: anywhere; }
+  </style>
 </head>
 <body>
 
@@ -53,7 +73,7 @@
     <div class="page-hero-content">
       <span class="eyebrow"><span class="badge-easy" style="position:static; display:inline-block; margin-bottom:0.5rem;">Easy Win</span></span>
       <h1>Social Media</h1>
-      <p>These platforms are designed to keep you scrolling and harvest your data. You don&rsquo;t have to quit everything, but you can downsize.</p>
+      <p>You don&rsquo;t have to quit everything. Protect your login, choose who can see what you share, and keep the apps that matter to you.</p>
     </div>
   </div>
 </section>
@@ -67,14 +87,12 @@
         <!-- RECOMMENDATION -->
         <div class="rec-box" id="recommendation">
           <span class="eyebrow">My recommendation</span>
-          
           <h2>Take Back Control</h2>
-          <p>You don't have to delete everything at once. Start by locking down your settings, then decide what you actually want to keep.</p>
-          
+          <p>Start with the four Facebook steps below. Then decide what you want to share less of, use less often, or leave behind.</p>
         </div>
 
         <!-- TABS -->
-        <div class="tabs-wrapper">
+        <div class="tabs-wrapper social-guide">
           <div class="tabs-nav">
             <button class="tab-btn active" type="button">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
@@ -87,100 +105,226 @@
           </div>
           <div class="tab-panel active" id="guide">
             <div class="content-section" style="border:none;padding-bottom:0;margin-bottom:1.5rem;">
-              <h2 style="margin-bottom:1rem;">The honest truth about social media</h2>
-              <p>I&rsquo;m not going to tell you to delete everything. Your friends and family are on these platforms, and that matters. But every platform you step back from, or lock down, is a genuine win for your privacy. Start with the worst offenders.</p>
+              <h2 style="margin-bottom:1rem;">A manageable place to start</h2>
+              <p>Your friends and family may be on these platforms, and that matters. You can make useful changes without leaving today. Take one step at a time, and check that each change has saved.</p>
             </div>
 
             <div class="content-section">
-              <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-4px;margin-right:0.45rem;"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>Facebook: Leave if you can</h3>
-              <p>Facebook is the most aggressive data harvester of any major consumer platform. It tracks you across the web even when you&rsquo;re not on Facebook, builds shadow profiles on people who have never signed up, and has been involved in more privacy scandals than any other tech company (Cambridge Analytica, the 2021 data breach exposing 533 million users, and many more).</p>
-              <p><strong>My recommendation:</strong> Delete your account if you can. If you can&rsquo;t, take these steps:</p>
-            <ol class="steps-list">
-              <li class="step">
-                <div class="step-num">1</div>
-                <div class="step-content">
-                  <h4>Lock down your privacy settings</h4>
-                  <p>Go to <a href="https://www.facebook.com/settings?tab=privacy" target="_blank" rel="noopener noreferrer">Settings &rarr; Privacy</a>. Set "Who can see your future posts?" to <strong>Friends</strong>. Set "Who can look you up using your email/phone?" to <strong>Friends</strong>.</p>
-                </div>
-              </li>
-              <li class="step">
-                <div class="step-num">2</div>
-                <div class="step-content">
-                  <h4>Turn off Off-Facebook Activity tracking</h4>
-                  <p>Go to <a href="https://www.facebook.com/off_facebook_activity/" target="_blank" rel="noopener noreferrer">Settings &rarr; Your Facebook Information &rarr; Off-Facebook Activity</a>. Click "Disconnect Future Activity." This stops Facebook from tracking you on other websites.</p>
-                </div>
-              </li>
-              <li class="step">
-                <div class="step-num">3</div>
-                <div class="step-content">
-                  <h4>Remove your phone number</h4>
-                  <p>Go to Settings &rarr; Personal Information. Remove your phone number if it&rsquo;s listed; it&rsquo;s used for ad targeting, not just account recovery.</p>
-                </div>
-              </li>
-            </ol>
+              <h3>Facebook: protect your login, then limit what you share</h3>
+              <p>Protecting your login and choosing who sees your posts are different jobs. The first two steps help you keep access to your account. The next two limit what other people can see. Neither makes Facebook a private service.</p>
+              <p class="checked-note"><strong>Checked November 25, 2026:</strong> These directions use official public help pages, not a live account test. Menu names can vary by device, region, and account rollout.</p>
+
+              <div class="device-chooser">
+                <h4>First, choose your device</h4>
+                <p>Open the instructions for the device you are using. Keep this guide open while you work in Facebook.</p>
+                <details class="device-help">
+                  <summary>Computer: using Facebook in a web browser</summary>
+                  <div class="device-help-content">
+                    <p>On Facebook, click <strong>your profile picture</strong>, then <strong>Settings &amp; privacy</strong>. Choose <strong>Settings</strong> for account settings.</p>
+                    <p>For the guided privacy review, choose <strong>Privacy Checkup</strong> from <strong>Settings &amp; privacy</strong>. See <a href="https://www.facebook.com/help/443357099140264" target="_blank" rel="noopener noreferrer">official Computer Help for Privacy Checkup</a>.</p>
+                  </div>
+                </details>
+                <details class="device-help">
+                  <summary>iPhone: using the Facebook app</summary>
+                  <div class="device-help-content">
+                    <p>Open Facebook and find the <strong>Menu</strong> button, sometimes shown as a three-line icon. Tap <strong>Settings &amp; privacy &rarr; Settings</strong>.</p>
+                    <p>For the guided privacy review, tap <strong>Privacy Checkup</strong> in Settings. See <a href="https://m.facebook.com/help/iphone-app/443357099140264?locale2=en_US" target="_blank" rel="noopener noreferrer">official iPhone App Help for Privacy Checkup</a>.</p>
+                  </div>
+                </details>
+                <details class="device-help">
+                  <summary>Android: using the Facebook app</summary>
+                  <div class="device-help-content">
+                    <p>Open Facebook and find the <strong>Menu</strong> button, sometimes shown as a three-line icon. Tap <strong>Settings &amp; privacy &rarr; Settings</strong>.</p>
+                    <p>For the guided privacy review, tap <strong>Privacy Checkup</strong> in Settings. See <a href="https://m.facebook.com/help/android-app/443357099140264?locale2=en_US" target="_blank" rel="noopener noreferrer">official Android App Help for Privacy Checkup</a>.</p>
+                  </div>
+                </details>
+                <p>For login and contact settings, look for <strong>Accounts Center</strong> or <strong>Meta Account</strong> inside Settings. Meta is gradually changing these menus. If asked, select the <strong>Facebook account you want to change</strong>, not an Instagram account.</p>
+                <details class="device-help">
+                  <summary>My screen looks different</summary>
+                  <div class="device-help-content">
+                    <p>Open the official help link for your device above. On other Facebook help pages, choose <strong>Computer Help</strong>, <strong>iPhone App Help</strong>, or <strong>Android App Help</strong> if a device selector is offered.</p>
+                    <p>If Privacy Checkup is missing, update the Facebook app and switch to your original main Facebook profile. You can also open <a href="https://www.facebook.com/privacy/checkup/" target="_blank" rel="noopener noreferrer">Privacy Checkup directly</a> or use <a href="https://accountscenter.facebook.com/" target="_blank" rel="noopener noreferrer">Accounts Center in your browser</a>. You may need to sign in.</p>
+                    <p>Do not change an unrelated setting just because its name sounds similar. If you are unsure, stop and ask someone you trust to help with the official directions.</p>
+                  </div>
+                </details>
+              </div>
+
+              <ol class="steps-list">
+                <li class="step">
+                  <div class="step-num">1</div>
+                  <div class="step-content">
+                    <h4>Confirm a working recovery email</h4>
+                    <p>From Settings, open <strong>Accounts Center / Meta Account &rarr; Personal details &rarr; Contact info</strong>. Make sure an email address you can actually open is listed for Facebook.</p>
+                    <p>If you need to add one, choose <strong>Add new contact &rarr; Add email</strong>, select Facebook, and enter the confirmation code Facebook sends to that email. <strong>Do not remove your phone number yet.</strong> See <a href="https://www.facebook.com/help/162801153783275" target="_blank" rel="noopener noreferrer">Facebook&rsquo;s email confirmation instructions</a>.</p>
+                    <p class="check-result"><strong>Check your result</strong>You can open that email inbox, the address is listed for the correct Facebook account, and you have completed Facebook&rsquo;s email confirmation.</p>
+                  </div>
+                </li>
+                <li class="step">
+                  <div class="step-num">2</div>
+                  <div class="step-content">
+                    <h4>Add a second login check and save recovery codes</h4>
+                    <p>Two-factor authentication adds another check after your password. Open <strong>Accounts Center / Meta Account &rarr; Password and security &rarr; Two-factor authentication</strong>, then select Facebook.</p>
+                    <p>Choose an <strong>authenticator app</strong>, which makes login codes on your phone, or a <strong>security key</strong>, a small physical device, if you can manage one. Follow <a href="https://www.facebook.com/help/148233965247823" target="_blank" rel="noopener noreferrer">Facebook&rsquo;s two-factor setup instructions</a> and finish the requested code or key confirmation. Just opening the setup page does not turn it on.</p>
+                    <p>Then open <strong>Additional methods &rarr; Recovery codes</strong>. These are backup login codes for when your usual method is unavailable. <a href="https://www.facebook.com/help/148104135383285" target="_blank" rel="noopener noreferrer">Print or write down the ten single-use codes</a> and store them somewhere private, away from your phone. Do not share them. If you use text-message (SMS) login codes instead, <strong>keep the required phone number</strong>.</p>
+                    <p class="check-result"><strong>Check your result</strong>Facebook shows your chosen two-factor method as enabled, its setup confirmation is complete, and your recovery codes are saved offline where you can find them if your phone is lost.</p>
+                  </div>
+                </li>
+                <li class="step">
+                  <div class="step-num">3</div>
+                  <div class="step-content">
+                    <h4>Hide displayed email and phone details</h4>
+                    <p>Use your device instructions above to open <strong>Privacy Checkup</strong>. Choose <strong>Who can see what you share</strong>. Set the audience beside your displayed email and phone details to <strong>Only me</strong>.</p>
+                    <p>This hides those details from other people, not from Meta. On a computer, another route is your profile&rsquo;s <strong>About &rarr; Contact and Basic Info</strong>, using the audience selector beside each detail. See <a href="https://www.facebook.com/help/117118145038822" target="_blank" rel="noopener noreferrer">official help for contact visibility</a>.</p>
+                    <p class="check-result"><strong>Check your result</strong>The review or profile editor shows <strong>Only me</strong> beside each email or phone detail you changed.</p>
+                  </div>
+                </li>
+                <li class="step">
+                  <div class="step-num">4</div>
+                  <div class="step-content">
+                    <h4>Set future profile posts to Friends</h4>
+                    <p>Continue in Privacy Checkup to the posts section and choose <strong>Friends</strong> for future posts. The Settings route is <strong>Audience and visibility &rarr; Posts &rarr; Who can see your future posts? &rarr; Friends &rarr; Done</strong>. See <a href="https://www.facebook.com/help/336801584336688" target="_blank" rel="noopener noreferrer">Facebook&rsquo;s future-post audience instructions</a>.</p>
+                    <p>This does not automatically change older public posts. Stories, Reels, tags, and public groups also need separate attention. Learn More explains those limits. Check the audience before every post because an individual post can have a different audience.</p>
+                    <p class="check-result"><strong>Check your result</strong>Reopen the future-post setting and confirm <strong>Friends</strong>. You can also start a new post without publishing it and check the audience label below your name.</p>
+                  </div>
+                </li>
+              </ol>
+
+              <h4 class="do-next-heading">Do next: optional changes</h4>
+              <p>The four steps above are a good stopping point. Come back to these when you are ready.</p>
+              <ol class="steps-list" start="5">
+                <li class="step">
+                  <div class="step-num">5</div>
+                  <div class="step-content">
+                    <h4>Reduce profile suggestions based on email and phone</h4>
+                    <p>Open <strong>Settings &rarr; Audience and visibility &rarr; How people find and contact you</strong>. Open <strong>People with your email address</strong> and choose <strong>No one</strong>. Do the same for <strong>People with your phone number</strong>. On a computer, the opening button may say <strong>View</strong>.</p>
+                    <p>These controls are separate from hiding contact details in step 3. Facebook can still suggest your profile using other information, and people can still search for you by name. See <a href="https://www.facebook.com/help/131297846947406" target="_blank" rel="noopener noreferrer">official help for email and phone profile suggestions</a>.</p>
+                    <p class="check-result"><strong>Check your result</strong>Reopen both settings and confirm <strong>No one</strong> for each.</p>
+                  </div>
+                </li>
+                <li class="step">
+                  <div class="step-num">6</div>
+                  <div class="step-content">
+                    <h4>Limit personalization using activity from other businesses</h4>
+                    <p>Open <strong>Settings &rarr; Accounts Center / Meta Account &rarr; Your information and permissions &rarr; Activity from other businesses</strong>. Choose the option that <strong>does not allow</strong> this activity to personalize ads and other content, then finish any confirmation.</p>
+                    <p>Read which connected accounts or profiles the choice covers. Wording and choices vary by region, especially in Europe and the UK. If it is missing, use <a href="https://www.facebook.com/help/568137493302217" target="_blank" rel="noopener noreferrer">Meta&rsquo;s current control instructions</a> or the Accounts Center browser link above.</p>
+                    <p><strong>This is not a &ldquo;tracking off&rdquo; switch.</strong> Businesses can still send Meta information about your activity. The choice limits specified personalization uses, not all collection or use. See <a href="https://www.facebook.com/help/1455040619735222" target="_blank" rel="noopener noreferrer">what Activity from other businesses controls</a>. Older Off-Facebook Activity directions are not the current starting point; see Learn More if your menu still has the older control.</p>
+                    <p class="check-result"><strong>Check your result</strong>Reopen the setting and confirm the saved choice does not allow this activity to personalize ads and other content. Check the account scope shown on screen.</p>
+                  </div>
+                </li>
+                <li class="step">
+                  <div class="step-num">7</div>
+                  <div class="step-content">
+                    <h4>Consider phone removal only if recovery is ready</h4>
+                    <p><strong>Removing your phone number is optional.</strong> Keep it if you use text-message (SMS) login codes. Only consider removal after you have a confirmed recovery email, an enabled non-SMS two-factor method, and saved offline recovery codes.</p>
+                    <p>If any of those is missing, keep the number and use the visibility and suggestion controls instead. If you decide to remove it, open <strong>Accounts Center / Meta Account &rarr; Personal details &rarr; Contact info &rarr; your number &rarr; Delete number</strong> and confirm. Follow <a href="https://www.facebook.com/help/124895950923762" target="_blank" rel="noopener noreferrer">Facebook&rsquo;s phone-number instructions</a>.</p>
+                    <p>Keep your current Facebook session open while checking. Removal does not prove Meta has erased historical information or a number obtained elsewhere.</p>
+                    <p class="check-result"><strong>Check your result</strong>The number is no longer listed, while your confirmed recovery email and non-SMS two-factor method remain enabled and your recovery codes are still safely saved.</p>
+                  </div>
+                </li>
+              </ol>
+              <p><strong>My recommendation:</strong> Leave Facebook if you no longer need it, or reduce what you share if you do. That is a personal recommendation, not a ranking of which platform is worst for privacy. If you choose to leave, use <a href="https://www.facebook.com/help/224562897555674" target="_blank" rel="noopener noreferrer">Facebook&rsquo;s official account-deletion instructions</a>.</p>
             </div>
 
             <div class="content-section">
-              <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-4px;margin-right:0.45rem;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Instagram: The better Meta option</h3>
-              <p>Instagram is owned by Meta (the same company as Facebook), so it&rsquo;s not private. But it&rsquo;s more visual and less algorithmically toxic than Facebook. If you&rsquo;re going to keep one Meta platform, Instagram is the better choice. Tighten your settings and be mindful of what you share.</p>
-            <ol class="steps-list">
-              <li class="step">
-                <div class="step-num">1</div>
-                <div class="step-content">
-                  <h4>Set your account to Private</h4>
-                  <p>Go to your profile &rarr; <strong>Settings &rarr; Account Privacy</strong> and toggle on <strong>Private Account</strong>. Only people you approve can see your posts.</p>
-                </div>
-              </li>
-              <li class="step">
-                <div class="step-num">2</div>
-                <div class="step-content">
-                  <h4>Limit ad data usage</h4>
-                  <p>Go to <strong>Settings &rarr; Ads &rarr; Ad Preferences &rarr; Ad Settings</strong>. Turn off "Data from partners" and "Activity-based ads."</p>
-                </div>
-              </li>
-            </ol>
+              <h3>Instagram: choose your audience, not a privacy upgrade</h3>
+              <p>Instagram is also owned by Meta. A private account limits who sees your posts, but it does not stop Meta&rsquo;s collection of information. Moving from Facebook to Instagram is not automatically a privacy improvement.</p>
+              <ol class="steps-list">
+                <li class="step">
+                  <div class="step-num">1</div>
+                  <div class="step-content">
+                    <h4>Make a personal account private and review followers</h4>
+                    <p>In the Instagram app, open your profile and the <strong>Menu</strong> button. Under <strong>Who can see your content</strong>, open <strong>Account privacy</strong> and turn on <strong>Private account</strong>. Finish any confirmation. Use <a href="https://help.instagram.com/448523408565555/" target="_blank" rel="noopener noreferrer">Instagram&rsquo;s official private-account instructions</a> if your menu differs.</p>
+                    <p>Review your existing followers and remove anyone you do not want seeing your posts. Making the account private does not remove them automatically. Your name, username, profile photo, and bio remain public. <strong>Business profiles cannot be private</strong> without switching account type. See <a href="https://help.instagram.com/517073653436611/" target="_blank" rel="noopener noreferrer">what stays public on a private account</a>.</p>
+                    <p class="check-result"><strong>Check your result</strong>Account privacy shows <strong>Private account</strong> is on, and you have reviewed the followers who already have access.</p>
+                  </div>
+                </li>
+                <li class="step">
+                  <div class="step-num">2</div>
+                  <div class="step-content">
+                    <h4>Review Meta&rsquo;s personalization control</h4>
+                    <p>From Instagram&rsquo;s settings, open <strong>Accounts Center / Meta Account &rarr; Your information and permissions &rarr; Activity from other businesses</strong>. Check that the choice covers your Instagram account. Follow <a href="https://www.facebook.com/help/568137493302217" target="_blank" rel="noopener noreferrer">Meta&rsquo;s current instructions</a> to choose not to allow this activity to personalize ads and other content.</p>
+                    <p>The available choices vary by account and region. This replaces the old &ldquo;Data from partners&rdquo; toggle instructions. It does not stop businesses sending data to Meta or make your account private from Meta.</p>
+                    <p class="check-result"><strong>Check your result</strong>The saved setting does not allow that personalization use, and the account scope includes the Instagram account you intended to change.</p>
+                  </div>
+                </li>
+              </ol>
             </div>
 
             <div class="content-section">
-              <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-4px;margin-right:0.45rem;"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>TikTok: Easy to leave</h3>
-              <p>TikTok&rsquo;s U.S. operations are now housed in a new, majority-American joint venture created to satisfy U.S. national-security rules, but significant privacy concerns remain, including expanded data collection under its latest terms. More practically: <strong>everything you love about TikTok is already on Instagram Reels.</strong> The short-video format, many of the same creators, and very similar content: it&rsquo;s all there. Leaving TikTok doesn&rsquo;t mean giving up short videos; it just means watching them in one less app.</p>
+              <h3>TikTok: use less if it is not important to you</h3>
+              <p>If TikTok is not important to you, consider leaving or using it less. Keep the apps you genuinely need and share less sensitive information.</p>
+              <p>Instagram Reels offers a similar short-video format, but creators, communities, and individual videos can differ. Changing apps is not automatically a privacy improvement, and you do not need to replace an app you leave.</p>
             </div>
             <div class="content-section">
-              <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-4px;margin-right:0.45rem;"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>X (formerly Twitter): Time to go</h3>
-              <p>X has become an increasingly hostile environment since its acquisition in 2022. Beyond the content quality issues, X collects extensive data about you and has loosened its data-sharing policies. There&rsquo;s no good privacy reason to stay. Simply leaving is fine.</p>
-              <p>To delete your account: <strong>Settings &rarr; Your Account &rarr; Deactivate your account</strong>. Accounts are deactivated for 30 days before permanent deletion.</p>
+              <h3>X (formerly Twitter): my recommendation is to leave</h3>
+              <p>My recommendation is to leave X if it no longer feels useful to you. You may value people or conversations there, so make the choice that fits your life. This is an editorial recommendation, not a claim that nobody has a good reason to stay.</p>
+              <p>Before deactivating, review any connected third-party apps and <a href="https://help.x.com/en/managing-your-account/connect-or-revoke-access-to-third-party-apps" target="_blank" rel="noopener noreferrer">revoke access for apps you no longer need</a>. If you have a paid subscription bought through Apple&rsquo;s App Store or Google Play, <strong>cancel it separately through that store</strong>. Deactivation does not cancel those app-store subscriptions.</p>
+              <p>Open <strong>Settings and privacy &rarr; Your account &rarr; Deactivate your account</strong>. Read the notice, choose <strong>Deactivate</strong>, and complete the password and confirmation steps. See <a href="https://help.x.com/en/managing-your-account/how-to-deactivate-x-account" target="_blank" rel="noopener noreferrer">X&rsquo;s official deactivation instructions</a> for your device.</p>
+              <p><strong>Do not log in for 30 days</strong> if you want permanent deletion. Accessing the account during that period can reactivate it. Uninstalling the app alone does not delete the account.</p>
+              <p class="check-result"><strong>Check your result</strong>You completed X&rsquo;s deactivation confirmation and, if relevant, your app store shows the subscription canceled. Do not log back in just to check: allow the full 30 days without account access.</p>
             </div>
 
             <div class="callout callout-tip">
               <span class="callout-icon">&#128161;</span>
               <div class="callout-body">
                 <strong>You don't have to do this all at once</strong>
-                <p>Pick one platform to leave or lock down this week. Come back and do another one next month. Small steps add up.</p>
+                <p>Start with one Facebook step today. Come back for the next when you are ready. Small, checked changes are useful progress.</p>
               </div>
             </div>
           </div>
           <div class="tab-panel" id="learn-more">
             <div class="content-section">
-              <h2>How social media platforms make money from you</h2>
-              <p>Every major social media platform is an advertising business. The product they sell is your attention and your data. They collect everything: what you post, what you like, what you scroll past, how long you pause on a video, your location, your contacts, and your behavior on other websites and apps. This data is used to build detailed advertising profiles and sold to thousands of advertisers.</p>
-              <p>The business model creates a fundamental conflict of interest: the more time you spend on the platform, the more data they collect and the more ads they can show you. This is why these apps are designed to be as addictive as possible.</p>
+              <h2>Login security, audiences, and company collection</h2>
+              <p>A confirmed recovery email, two-factor authentication, and recovery codes help you keep access to your account. They do not decide who can see a post. A Friends audience or private account limits visibility to other people, but it does not stop the platform from collecting information.</p>
+              <p>Facebook phone numbers can have different uses. A number supplied specifically for two-factor authentication has a security use; numbers added elsewhere, such as your profile or Marketplace, can have other uses, including ads. This is why phone removal is optional and comes after recovery setup. See <a href="https://www.facebook.com/help/458801388097062" target="_blank" rel="noopener noreferrer">Facebook&rsquo;s explanation of two-factor phone numbers</a>.</p>
             </div>
             <div class="content-section">
-              <h2>The Cambridge Analytica moment</h2>
-              <p>In 2018, it emerged that a political consulting firm called Cambridge Analytica had harvested the personal data of up to 87 million Facebook users without their consent, using it to build psychological profiles for political advertising. Facebook had allowed third-party apps to collect not just the data of users who installed them, but the data of all their friends, without those friends&rsquo; knowledge or consent.</p>
-              <p>This was not an isolated incident. It was a window into how Facebook&rsquo;s data-sharing model worked at scale. The platform has since tightened some of these policies, but the fundamental architecture, a business built on harvesting and monetizing personal data, has not changed.</p>
+              <h2>Older posts and audiences that need a separate check</h2>
+              <p>Choosing Friends for future Facebook posts does not automatically change older public posts. If you want to restrict previous posts shared with Public or Friends of friends, consider <strong>Limit Past Posts</strong> under <strong>Settings &rarr; Audience and visibility &rarr; Posts</strong>. Read <a href="https://www.facebook.com/help/236898969688346" target="_blank" rel="noopener noreferrer">Facebook&rsquo;s Limit Past Posts instructions and warnings</a> before confirming.</p>
+              <p><strong>This is optional, and there is no one-click undo.</strong> To restore broader audiences, you would need to edit posts individually. Custom audiences are not changed, and this setting does not control posts made by someone else.</p>
+              <p class="check-result"><strong>Check your result</strong>If you used Limit Past Posts, inspect the audience label on a previously public post. Do not assume every item on your profile has become private.</p>
+              <p>Stories and Reels have their own audience controls. Contributions to public groups remain public. Tagging someone can expand a post&rsquo;s audience, and your setting cannot make someone else&rsquo;s post private. See <a href="https://www.facebook.com/help/120939471321735" target="_blank" rel="noopener noreferrer">Facebook&rsquo;s post-audience rules and exceptions</a>. People who can see a post can also copy it or take a screenshot.</p>
             </div>
             <div class="content-section">
-              <h2>The attention economy and your mental health</h2>
-              <p>The privacy costs of social media are inseparable from the mental health costs. These platforms are engineered by teams of behavioral scientists to maximize engagement, which means maximizing the emotional responses (outrage, envy, anxiety) that keep you scrolling. Reducing your use isn&rsquo;t just good for your privacy; it&rsquo;s good for your wellbeing.</p>
+              <h2>What the activity control does, and does not do</h2>
+              <p>Businesses using Meta&rsquo;s tools can send information about activity on other websites and apps. <strong>Activity from other businesses</strong> controls specified uses of that activity to personalize ads and other content, including Feed and AI responses. It does not stop businesses collecting or sending information. Meta says it may still anonymize that activity or use it to improve products.</p>
+              <p>Activity within Meta, customer-list advertising, and information you deliberately connect to Meta have separate treatment. Read <a href="https://www.facebook.com/help/1455040619735222" target="_blank" rel="noopener noreferrer">Meta&rsquo;s explanation of the setting</a> rather than treating it as a switch that stops all tracking.</p>
+              <p>Meta announced in June 2026 that <strong>Your activity off Meta technologies</strong>, previously called Off-Facebook Activity, was being retired in several countries as part of <a href="https://about.fb.com/news/2026/06/better-personalization-and-changes-to-controls-for-your-activity-from-other-businesses/" target="_blank" rel="noopener noreferrer">changes to activity controls</a>. That is why the Quick Guide starts with Activity from other businesses.</p>
+              <details class="device-help">
+                <summary>My account still shows the older activity control</summary>
+                <div class="device-help-content">
+                  <p>If you still have <strong>Your activity off Meta technologies</strong>, the legacy route is <strong>Accounts Center &rarr; Your information and permissions &rarr; Your activity off Meta technologies &rarr; Manage future activity</strong>. Follow <a href="https://www.facebook.com/help/1224342157705160" target="_blank" rel="noopener noreferrer">the official legacy instructions</a> to <strong>Disconnect future activity</strong>. This control or its help page may no longer be available in your region.</p>
+                  <p>Disconnection separates activity from your account. It does not stop the underlying collection or sending of data, or delete all data.</p>
+                  <p class="check-result"><strong>Check your result</strong>If you completed the legacy change, Manage future activity shows future activity is disconnected. That is not proof that tracking has stopped.</p>
+                </div>
+              </details>
+            </div>
+            <div class="content-section">
+              <h2>How many social platforms make money</h2>
+              <p>Many large social networks earn money from advertising. They use information about your activity to choose content and place ads, and may receive information from other businesses. What they collect and how they share it varies by service.</p>
+              <p>Selling targeted ad placement is not the same as selling everyone&rsquo;s personal profile to advertisers. <a href="https://www.facebook.com/help/1137953062904148" target="_blank" rel="noopener noreferrer">Meta says it does not sell personal information</a>. That does not make its collection and targeting harmless. Audience settings limit what other people see, not necessarily what the company collects.</p>
+              <p>More time in an ad-funded app can mean more opportunities to show you ads and learn from your activity. Sharing less and using an app less can reduce your ongoing participation, but does not erase information already collected.</p>
+            </div>
+            <div class="content-section">
+              <h2>A historical lesson: Cambridge Analytica</h2>
+              <p>In 2018, reporting revealed how Facebook data obtained through an app reached the political consulting firm Cambridge Analytica. The app could collect information about users and their friends under Facebook&rsquo;s rules at the time. <a href="https://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election" target="_blank" rel="noopener noreferrer">The Guardian&rsquo;s original investigation</a> is a historical example of why access and sharing rules matter, not a description of today&rsquo;s settings or proof of a platform ranking.</p>
+            </div>
+            <div class="content-section">
+              <h2>Make room for the parts of life you enjoy</h2>
+              <p>If an app leaves you feeling anxious, or keeps taking time you wanted for something else, reducing your use may help. Other people find valuable friendships and support online. Pay attention to your own experience rather than assuming the same choice is right for everyone.</p>
+              <p>You can start by checking less often, turning off unwanted notifications, or taking a break. You do not have to replace an app you stop using.</p>
             </div>
             <div class="further-reading">
               <h3>Further Reading</h3>
               <ul>
-                <li><a href="https://www.eff.org/deeplinks/2020/01/facebook-history-welcome-incomplete-move" target="_blank" rel="noopener noreferrer">Off-Facebook Activity is a Welcome but Incomplete Move</a><span class="source">Electronic Frontier Foundation</span></li>
-                <li><a href="https://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election" target="_blank" rel="noopener noreferrer">Revealed: 50 million Facebook profiles harvested for Cambridge Analytica in major data breach</a><span class="source">The Guardian</span></li>
-                <li><a href="https://www.facebook.com/help/224562897555674" target="_blank" rel="noopener noreferrer">How to Delete Your Facebook Account</a><span class="source">Facebook Help Center</span></li>
-                <li><a href="https://help.instagram.com/196883487377501" target="_blank" rel="noopener noreferrer">Instagram Privacy Settings Guide</a><span class="source">Instagram Help Center</span></li>
+                <li><a href="https://www.facebook.com/help/443357099140264" target="_blank" rel="noopener noreferrer">Facebook Privacy Checkup</a><span class="source">Facebook Help Center, current device directions linked in the Quick Guide</span></li>
+                <li><a href="https://www.facebook.com/help/148233965247823" target="_blank" rel="noopener noreferrer">Facebook two-factor authentication</a><span class="source">Facebook Help Center</span></li>
+                <li><a href="https://www.facebook.com/help/1455040619735222" target="_blank" rel="noopener noreferrer">About Activity from other businesses</a><span class="source">Meta&rsquo;s current personalization control and its limits</span></li>
+                <li><a href="https://help.instagram.com/448523408565555/" target="_blank" rel="noopener noreferrer">Make your Instagram account private</a><span class="source">Instagram Help Center</span></li>
+                <li><a href="https://help.x.com/en/managing-your-account/how-to-deactivate-x-account" target="_blank" rel="noopener noreferrer">Deactivate or delete an X account</a><span class="source">X Help Center, including the 30-day period and subscription rules</span></li>
+                <li><a href="https://www.facebook.com/help/224562897555674" target="_blank" rel="noopener noreferrer">Delete your Facebook account</a><span class="source">Facebook Help Center</span></li>
+                <li><a href="https://www.eff.org/deeplinks/2020/01/facebook-history-welcome-incomplete-move" target="_blank" rel="noopener noreferrer">Off-Facebook Activity is a Welcome but Incomplete Move</a><span class="source">Electronic Frontier Foundation, historical analysis from January 2020, not current menu instructions</span></li>
+                <li><a href="https://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election" target="_blank" rel="noopener noreferrer">Revealed: 50 million Facebook profiles harvested for Cambridge Analytica in major data breach</a><span class="source">The Guardian, historical reporting from March 2018, not current settings guidance</span></li>
               </ul>
             </div>
           </div>
