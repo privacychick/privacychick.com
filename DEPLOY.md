@@ -2,14 +2,14 @@
 
 ## Current setup
 
-- Repository: `privacychick/privacychick.io`
+- Repository: `privacychick/privacychick.com`
 - Primary website: `https://privacychick.com`
 - Hosting: GitHub Pages, published from `main` and `/(root)`
 - DNS, proxy, TLS protection, and domain redirects: Cloudflare
 - Contact form: `https://formspree.io/f/mvzdngnp`
 - Email: Proton Mail, with both `.com` and `.io` domains retained
 
-The repository name remains `privacychick.io`. It does not need to match the primary website domain. This is a static HTML, CSS, and JavaScript site, with no PHP, application backend, or database.
+The repository was renamed to `privacychick.com` after the primary-domain migration. Its name does not control the website's custom domain or the `www` DNS target. This is a static HTML, CSS, and JavaScript site, with no PHP, application backend, or database.
 
 ## Updating website content
 
@@ -31,7 +31,7 @@ The file must contain one domain only:
 privacychick.com
 ```
 
-Pull GitHub's generated domain-change commit before preparing a later content commit. Do not publish an older local CNAME, add a second domain to it, or rename the repository.
+Pull GitHub's generated domain-change commit before preparing a later content commit. Do not publish an older local CNAME or add a second domain to it. Keep repository renames separate from domain and website-content changes.
 
 Enable **Enforce HTTPS** when GitHub makes it available. An unchecked enforcement option is separate from whether a valid HTTPS certificate is already serving the domain.
 
