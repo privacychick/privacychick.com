@@ -114,37 +114,10 @@
         <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 6px; font-family: var(--font); font-size: 1rem; resize: vertical;"></textarea>
       </div>
       <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
-      <div id="formSuccess" style="display:none; margin-top:1rem; padding:1rem; background:#d1fae5; border-radius:6px; color:#065f46; font-weight:600;">&#10003; Message sent — thank you. I read every submission.</div>
+      <div id="formSuccess" style="display:none; margin-top:1rem; padding:1rem; background:#d1fae5; border-radius:6px; color:#065f46; font-weight:600;">&#10003; Message sent. Thank you. I read every submission.</div>
       <div id="formError" style="display:none; margin-top:1rem; padding:1rem; background:#fee2e2; border-radius:6px; color:#991b1b;">Something went wrong. Please try again in a moment.</div>
-      <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 1rem; margin-bottom: 0;">Powered securely by Formspree. No tracking scripts are used.</p>
     </form>
-    <script>
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      var btn = document.getElementById('submitBtn');
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      try {
-        var resp = await fetch(this.action, {
-          method: 'POST',
-          body: new FormData(this),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (resp.ok) {
-          document.getElementById('formSuccess').style.display = 'block';
-          document.getElementById('formError').style.display = 'none';
-          this.reset();
-        } else {
-          throw new Error('bad response');
-        }
-      } catch(err) {
-        document.getElementById('formError').style.display = 'block';
-        document.getElementById('formSuccess').style.display = 'none';
-      }
-      btn.disabled = false;
-      btn.textContent = 'Send Message';
-    });
-    </script>
+    <script src="js/contact.js" defer></script>
 
   </div>
 </section>
