@@ -1,135 +1,93 @@
-# Privacy Chick — GitHub Pages Deployment Guide
+# Privacy Chick: Deployment Guide
 
-## What's in this package
+## Current setup
 
+- Repository: `privacychick/privacychick.io`
+- Primary website: `https://privacychick.com`
+- Hosting: GitHub Pages, published from `main` and `/(root)`
+- DNS, proxy, TLS protection, and domain redirects: Cloudflare
+- Contact form: `https://formspree.io/f/mvzdngnp`
+- Email: Proton Mail, with both `.com` and `.io` domains retained
+
+The repository name remains `privacychick.io`. It does not need to match the primary website domain. This is a static HTML, CSS, and JavaScript site, with no PHP, application backend, or database.
+
+## Updating website content
+
+1. Pull the latest `main` before making changes. Preserve any unrelated unpublished work before pulling.
+2. Edit only the files required for the approved change. Keep existing navigation, images, styles, and unrelated pages intact.
+3. Review the exact diff and obtain explicit approval before committing or pushing.
+4. Commit only the approved files and push normally to `main`. Do not force-push or stage every file indiscriminately.
+5. Wait for the GitHub Pages deployment to succeed, then verify the published pages at `https://privacychick.com`.
+
+Do not delete the existing site, create a replacement repository, or change the Pages source as part of ordinary content updates.
+
+## GitHub Pages custom domain
+
+In the existing repository's **Settings → Pages**, the custom domain is `privacychick.com`. For branch-based publishing, GitHub updates the root `CNAME` file when the custom domain is saved.
+
+The file must contain one domain only:
+
+```text
+privacychick.com
 ```
-privacychick/
-├── index.html              ← Homepage
-├── 2fa.html                ← Two-Factor Authentication guide
-├── passwords.html          ← Passwords guide
-├── email.html              ← Email guide
-├── browser.html            ← Browser guide
-├── search.html             ← Search Engine guide
-├── social.html             ← Social Media guide
-├── text.html               ← Text Messaging guide
-├── credit.html             ← Credit Freeze guide
-├── pwned.html              ← Data Breaches guide
-├── vpn.html                ← VPN guide
-├── ai.html                 ← AI Assistants guide
-├── about.html              ← About page
-├── contact.html            ← Contact page
-├── privacy.html            ← Privacy Policy
-├── css/
-│   └── style.css           ← All styles
-├── js/
-│   └── main.js             ← Navigation + tabs + dynamic year
-└── images/
-    ├── topics/             ← 11 topic card/hero images
-    └── logos/              ← Product logos (Proton, Bitwarden, etc.)
+
+Pull GitHub's generated domain-change commit before preparing a later content commit. Do not publish an older local CNAME, add a second domain to it, or rename the repository.
+
+Enable **Enforce HTTPS** when GitHub makes it available. An unchecked enforcement option is separate from whether a valid HTTPS certificate is already serving the domain.
+
+## Cloudflare website DNS and TLS
+
+The serving `.com` apex uses four GitHub Pages A records:
+
+```text
+@  185.199.108.153
+@  185.199.109.153
+@  185.199.110.153
+@  185.199.111.153
 ```
 
----
+The `www` CNAME points directly to `privacychick.github.io`, without a repository path.
 
-## Deploying to GitHub Pages
+These website records are **Proxied** in the finished configuration. Cloudflare uses **Full (strict)** with a valid GitHub origin certificate and an active Cloudflare edge certificate covering the apex and `www`. Do not use Flexible SSL.
 
-### Option A — Deploy to your existing privacychick.github.io repository
+If a future domain change requires certificate provisioning, temporary DNS-only website records may be used while the origin certificate is obtained. Restore proxying only after trusted origin HTTPS succeeds. DNS-only requests bypass Cloudflare's edge protections.
 
-1. **Clone your existing repository** (if you don't have it locally):
-   ```bash
-   git clone https://github.com/privacychick/privacychick.github.io
-   cd privacychick.github.io
-   ```
+Keep mail-related records separate from website DNS. Proton's DKIM CNAMEs remain **DNS only**, even when website A records and `www` are proxied.
 
-2. **Back up your existing files** (optional but recommended):
-   ```bash
-   git checkout -b backup-old-site
-   git push origin backup-old-site
-   git checkout main
-   ```
+## Old-domain forwarding
 
-3. **Replace the site files** with the new ones from this package:
-   - Delete all existing `.html` files, `css/`, `js/`, and `images/` folders
-   - Copy all files from this package into the repository root
+In the `privacychick.io` Cloudflare zone, the redirect matches:
 
-4. **Commit and push**:
-   ```bash
-   git add -A
-   git commit -m "Redesign: new Privacy Chick site"
-   git push origin main
-   ```
+```text
+(http.host in {"privacychick.io" "www.privacychick.io"})
+```
 
-5. **Your site will be live** at `https://privacychick.io` within 1–2 minutes.
+Its dynamic destination is:
 
----
+```text
+concat("https://privacychick.com", http.request.uri.path)
+```
 
-### Option B — Deploy to a new repository
+Enable **Preserve query string**. Use 302 during migration testing, then 301 after final acceptance. Both old hostnames must have proxied DNS and valid edge HTTPS.
 
-1. **Create a new GitHub repository** named `privacychick.github.io`
-   - Go to https://github.com/new
-   - Name it exactly: `privacychick.github.io`
-   - Set it to Public
-   - Do NOT initialize with a README
+Keep the reverse `.com → .io` forwarding disabled. HTTP website redirects do not forward email.
 
-2. **Upload the files**:
-   ```bash
-   cd /path/to/privacychick/   # the folder from this package
-   git init
-   git add -A
-   git commit -m "Initial commit: Privacy Chick redesign"
-   git branch -M main
-   git remote add origin https://github.com/privacychick/privacychick.github.io.git
-   git push -u origin main
-   ```
+## Contact form and security headers
 
-3. **Enable GitHub Pages** (if not already enabled):
-   - Go to your repository → Settings → Pages
-   - Under "Source", select `main` branch, `/ (root)` folder
-   - Click Save
+Keep the existing Formspree endpoint and AJAX submission code unchanged. The current form is not a Netlify form and does not require EmailJS or a replacement service.
 
-4. **Your site will be live** at `https://privacychick.github.io` (or your custom domain if configured).
+The existing Formspree email action should notify verified `contact@privacychick.com`. Keep the `.io` mailbox active. Formspree account email and form-notification recipient are separate settings.
 
----
+The Content Security Policy must permit the site's existing scripts and styles and the AJAX connection to `https://formspree.io`. Preserve a compatible Referrer-Policy if Formspree domain restrictions are configured. Replace the existing CSP header rather than adding overlapping policies.
 
-## Setting up a custom domain (privacychick.io)
+After a domain, form, or CSP change, verify browser success, the Formspree dashboard submission, and actual notification delivery to the intended recipient. A successful page load alone is not a complete form test.
 
-If you have a custom domain configured:
+## Email continuity
 
-1. Add a file named `CNAME` (no extension) to the repository root containing just:
-   ```
-   privacychick.io
-   ```
+Keep `contact@privacychick.io`, `security@privacychick.io`, and `privacy@privacychick.io` active alongside their `.com` equivalents in the intended Proton users' mailboxes.
 
-2. In your domain registrar's DNS settings, ensure these records exist:
-   ```
-   A     @    185.199.108.153
-   A     @    185.199.109.153
-   A     @    185.199.110.153
-   A     @    185.199.111.153
-   CNAME www  privacychick.github.io.
-   ```
+Do not remove either Proton domain or change working MX, SPF, DKIM, or DMARC records during a website-only update. Preserve an independently accessible Proton recovery address.
 
-3. In GitHub repository Settings → Pages, enter `privacychick.io` as your custom domain and check "Enforce HTTPS".
+## Final checks
 
----
-
-## Contact form
-
-The contact page uses a form with `data-netlify="true"` attribute. This works automatically if you host on **Netlify** instead of GitHub Pages. 
-
-If staying on GitHub Pages, you have two options:
-- **Formspree** (free tier): Replace the `<form>` action with `https://formspree.io/f/YOUR_ID`
-- **EmailJS**: A free JavaScript-based form submission service
-
----
-
-## Keeping the site updated
-
-The copyright year updates automatically via JavaScript — no changes needed each year.
-
-For content updates, edit the relevant `.html` file directly. Each page follows the same structure:
-- The **Quick Guide** content is inside `<div id="quick-guide" class="tab-panel active">`
-- The **Learn More** content is inside `<div id="learn-more" class="tab-panel">`
-
----
-
-*Built April 2026. All images are AI-generated originals. All external links verified at time of build.*
+Verify trusted HTTPS, the primary hostname, old-domain path/query redirects, desktop and mobile navigation, guide tabs, images, the contact form, `robots.txt`, and `.well-known/security.txt` after deployment. Preserve existing AI-crawler restrictions. Do not advertise a sitemap unless a real sitemap is published.
